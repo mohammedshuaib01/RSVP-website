@@ -39,7 +39,7 @@ const RSVP = () => {
           {/* HEADER */}
           <div className="rsvp-header">
             <div className="ganesha-icon">
-              <img src={ganeshLogo} alt="Ganesha" />
+              <img src="/ganeeshlogo.png" alt="Ganesha" />
             </div>
 
             <h2 className="rsvp-title">Please RSVP</h2>
