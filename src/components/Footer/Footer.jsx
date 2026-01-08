@@ -27,7 +27,7 @@ const Footer = () => {
                         <button onClick={() => scrollToSection('story')} className="footer-link">Our Story</button>
                         <button onClick={() => scrollToSection('celebrations')} className="footer-link">Celebrations</button>
                         <button onClick={() => scrollToSection('rsvp')} className="footer-link">RSVP</button>
-                        <a href="/Akanksha & Vineet.jpeg" download className="footer-link download-invitation">Download Invitation</a>
+                        <a href="/Akanksha & Vineet’s Wedding Invite.pdf" download className="footer-link download-invitation">Download Invitation</a>
                     </div>
                 </div>
 

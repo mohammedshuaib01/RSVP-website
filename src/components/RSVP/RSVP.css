@@ -233,6 +233,16 @@
     font-size: 1.2rem;
 }
 
+.rsvp-info-note {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    color: #8c8c8c;
+    margin-top: 0.8rem;
+    font-style: italic;
+    line-height: 1.4;
+    text-align: left;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .rsvp-section {
@@ -281,11 +291,11 @@
         padding: 12px 15px;
     }
 
-    .wedding-section{
-padding-left: 10px !important;
-padding-right: 10px !important;
-    
+    .wedding-section {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+
     }
 
-   
+
 }

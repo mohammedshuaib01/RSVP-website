@@ -5,6 +5,8 @@ import ganeshLogo from "../../assets/ganesh_logo_new.png";
 
 const RSVP = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [requirePickup, setRequirePickup] = useState("");
+  const [pickupLocation, setPickupLocation] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -119,13 +121,6 @@ const RSVP = () => {
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="Above 10">Above 10</option>
 
                   </select>
                 </div>
@@ -152,20 +147,96 @@ const RSVP = () => {
                 </div>
               </div>
 
-              {/* FLIGHT NUMBER */}
+              {/* PICKUP REQUIREMENT */}
               <div className="rsvp-form-row">
                 <div className="rsvp-input-group full-width">
-                  <label>Flight Number</label>
-                  <input
-                    type="text"
-                    name="entry.1637869251"
-                    placeholder="Ex: AI-101"
-                  />
+                  <label>Do you require pickup?</label>
+                  <select
+                    name="entry.PICKUP_REQUIREMENT"
+                    value={requirePickup}
+                    onChange={(e) => setRequirePickup(e.target.value)}
+                    required
+                  >
+                    <option value="" disabled>
+                      Select an option
+                    </option>
+                    <option value="Yes, I need pickup">
+                      Yes, I need pickup
+                    </option>
+                    <option value="No, I will reach the destination directly">
+                      No, I will reach the destination directly
+                    </option>
+                  </select>
+                  <p className="rsvp-info-note">
+                    Pickup will be available on 19th and 20th January from Kochi Airport and Railway Stations.
+                  </p>
                 </div>
               </div>
 
+              {requirePickup === "Yes, I need pickup" && (
+                <>
+                  {/* PICKUP LOCATION */}
+                  <div className="rsvp-form-row">
+                    <div className="rsvp-input-group full-width">
+                      <label>Pickup Location</label>
+                      <select
+                        name="entry.PICKUP_LOCATION"
+                        value={pickupLocation}
+                        onChange={(e) => setPickupLocation(e.target.value)}
+                        required
+                      >
+                        <option value="" disabled>
+                          Select a location
+                        </option>
+                        <option value="Kochi International Airport">
+                          Kochi International Airport
+                        </option>
+                        <option value="Ernakulam Railway Station">
+                          Ernakulam Railway Station
+                        </option>
+                        <option value="Kottayam Railway Station">
+                          Kottayam Railway Station
+                        </option>
+                        <option value="Hotel in Kochi">
+                          Hotel in Kochi
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+
+                  {/* HOTEL NAME (Conditional) */}
+                  {pickupLocation === "Hotel in Kochi" && (
+                    <div className="rsvp-form-row">
+                      <div className="rsvp-input-group full-width">
+                        <label>Hotel Name</label>
+                        <input
+                          type="text"
+                          name="entry.HOTEL_NAME"
+                          placeholder="Enter your hotel name"
+                          required
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* FLIGHT NUMBER (Conditional) */}
+                  {pickupLocation === "Kochi International Airport" && (
+                    <div className="rsvp-form-row">
+                      <div className="rsvp-input-group full-width">
+                        <label>Flight Number (Optional)</label>
+                        <input
+                          type="text"
+                          name="entry.1637869251"
+                          placeholder="Ex: AI-101"
+                        />
+                      </div>
+                    </div>
+                  )}
+                </>
+              )}
+
               {/* MESSAGE */}
-              <div className="rsvp-form-row">
+              {/* <div className="rsvp-form-row">
                 <div className="rsvp-input-group full-width">
                   <label>Blessings / Message (Optional)</label>
                   <textarea
@@ -174,7 +245,7 @@ const RSVP = () => {
                     rows="3"
                   ></textarea>
                 </div>
-              </div>
+              </div> */}
 
               {/* SUBMIT */}
               <button type="submit" className="rsvp-button">
