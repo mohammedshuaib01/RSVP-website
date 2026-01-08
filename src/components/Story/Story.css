@@ -1,0 +1,241 @@
+/* Story Section */
+.story-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
+    /* Ensure z-index if needed */
+}
+
+.story-header {
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.story-title {
+    font-family: 'Alex Brush', cursive;
+    font-size: 5rem;
+    color: #a38c6d;
+    /* Slightly lighter gold/beige match */
+    margin: 0;
+    line-height: 1.2;
+    font-weight: 400;
+}
+
+/* Custom Divider */
+.story-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 10px auto 20px;
+    color: #d4c5a9;
+}
+
+.divider-line {
+    height: 1px;
+    width: 100px;
+    background: linear-gradient(90deg, transparent, #d4c5a9, transparent);
+}
+
+.divider-ornament {
+    font-size: 1.5rem;
+    color: #a38c6d;
+}
+
+.story-intro {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: #a89f91;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+}
+
+/* Card Container */
+.story-card {
+    display: flex;
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #fffdf9;
+    /* Very light cream */
+    border: 1px solid #e6dfcf;
+    padding: 12px;
+    /* Gap for the double border look */
+    box-shadow: 0 10px 40px rgba(139, 115, 85, 0.1);
+    /* Soft gold shadow */
+    position: relative;
+    align-items: stretch;
+}
+
+.story-card::before {
+    /* Inner border simulation if needed, or rely on padding + child borders */
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    border: 1px solid #f0eadc;
+    pointer-events: none;
+    display: none;
+    /* Simplified for now */
+}
+
+.story-image-side {
+    flex: 1.1;
+    /* Give image slightly more space or equal */
+    min-height: 450px;
+    position: relative;
+    overflow: hidden;
+    /* border-right: 1px solid #f0eadc; */
+    /* Optional separation */
+}
+
+.story-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* Soft edges or vintage feel */
+    mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+}
+
+.story-text-side {
+    flex: 1.2;
+    padding: 3rem 4rem 3rem 2rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    background: #fffdf9;
+}
+
+.story-para {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    line-height: 1.9;
+    color: #8B7355;
+    margin-bottom: 2.5rem;
+}
+
+.story-rsvp-button {
+    display: inline-block;
+    padding: 12px 35px;
+    background-color: #5d6d62;
+    /* Muted Green to match RSVP button */
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+    width: fit-content;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 5;
+    position: relative;
+}
+
+.story-rsvp-button:hover {
+    background-color: #4a584f;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.story-actions {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    z-index: 5;
+    position: relative;
+    width: fit-content;
+}
+
+.story-download-link {
+    color: #5d6d62;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-top: 1px solid #5d6d62;
+    border-bottom: 1px solid #5d6d62;
+    padding: 11px 0;
+    line-height: normal;
+    display: inline-block;
+}
+
+.story-download-link:hover {
+    color: #4a584f;
+}
+
+/* Drop cap or special styling for first letter if desired, 
+   but reference shows normal text layout */
+
+.story-floral-corner {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 280px;
+    /* Enlarge as requested */
+    height: auto;
+    opacity: 1;
+    pointer-events: none;
+    z-index: 10;
+    mix-blend-mode: multiply;
+    transform: rotate(180deg);
+}
+
+/* Scrollbar hidden mainly for aesthetics if content overflows (rare here) */
+
+/* Responsive */
+@media (max-width: 900px) {
+    .story-card {
+        flex-direction: column;
+        padding: 40px 20px 80px;
+        /* More bottom padding for flower */
+    }
+
+    .story-image-side,
+    .story-text-side {
+        width: 100%;
+        padding: 0;
+    }
+
+    .story-image-side {
+        margin-bottom: 2rem;
+    }
+
+    .story-main-img {
+        max-height: 300px;
+    }
+
+    .story-text-side {
+        align-items: center;
+        text-align: center;
+    }
+
+    .story-rsvp-button {
+        align-self: center;
+    }
+
+    .story-floral-corner {
+        width: 180px;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .story-title {
+        font-size: 2.5rem;
+    }
+
+    .story-section {
+        padding: 4rem 1rem;
+    }
+}

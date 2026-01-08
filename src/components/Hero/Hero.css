@@ -1,0 +1,202 @@
+.hero-section {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    margin-top: 0 !important;
+    background-image: url('/ChatGPT Image Jan 6, 2026, 08_45_52 AM.png');
+    background-size: cover;
+    background-position: top center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #8B7355;
+    /* Gold/Bronze */
+    overflow: hidden;
+}
+
+/* Overlay for better text readability if needed, though watercolor is usually light */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(253, 251, 247, 0.2);
+    /* Very subtle overlay */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    max-width: 800px;
+    transform: translateY(-100px);
+    /* Move content up as requested */
+}
+
+
+
+.initials {
+    display: none;
+    /* Hidden based on new reference */
+}
+
+.intro-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    /* Larger as per image */
+    color: #8b592ba5;
+    /* Brownish text color from image */
+    margin-bottom: 2rem;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+.main-names {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    /* Much larger */
+    color: #A67C52;
+    /* Gold/Light Brown from image */
+    font-weight: 500;
+    font-style: italic;
+    margin: 0;
+    line-height: 1.2;
+    text-shadow: none;
+    /* Clean look */
+}
+
+/* Decorative Bells (Simple CSS simulation or emoji for now) */
+.hanging-bells {
+    position: absolute;
+    top: -20px;
+    display: flex;
+    gap: 20px;
+    z-index: 2;
+}
+
+.hanging-bells.left {
+    left: 5%;
+}
+
+.hanging-bells.right {
+    right: 5%;
+}
+
+.bell {
+    font-size: 3rem;
+    color: #DAA520;
+    animation: swing 3s infinite ease-in-out;
+    transform-origin: top center;
+}
+
+.bell:nth-child(2) {
+    animation-delay: 0.5s;
+    font-size: 2.5rem;
+    margin-top: 20px;
+}
+
+@keyframes swing {
+    0% {
+        transform: rotate(5deg);
+    }
+
+    50% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(5deg);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 1.5rem;
+        transform: translateY(-50px);
+    }
+
+    .main-names {
+        font-size: 3rem;
+    }
+
+    .intro-text {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-logo-container img {
+        width: 80px;
+        margin-bottom: 1rem;
+    }
+
+    .hero-divider {
+        max-width: 300px;
+    }
+
+    .hero-section {
+        height: 100vh;
+        min-height: 100vh;
+        padding: 0;
+        margin: 0;
+        background-attachment: scroll;
+        /* Better for mobile */
+    }
+
+    .hero-content {
+        padding: 1rem;
+        transform: translateY(0);
+        /* Remove transform which might cause white space if clipped */
+        margin-top: -2rem;
+        /* Subtle nudge up without transform clipping */
+    }
+}
+
+.hero-logo-container img {
+    width: 120px;
+    height: auto;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+/* Decorative Divider under Main Names */
+.hero-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -1rem;
+    /* Pull up closer to text */
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+}
+
+.hero-divider::before,
+.hero-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    border-top: 1px solid #A67C52;
+    border-bottom: 1px solid #A67C52;
+    height: 3px;
+    /* Double line effect */
+    margin: 0 15px;
+}
+
+.hero-divider span {
+    color: #A67C52;
+    font-size: 1.5rem;
+    font-family: 'Cinzel Decorative', cursive;
+    /* Use decorative font */
+    transform: translateY(-2px);
+}

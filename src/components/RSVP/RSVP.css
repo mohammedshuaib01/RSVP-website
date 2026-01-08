@@ -1,0 +1,291 @@
+/* RSVP Section Specific Styles */
+.rsvp-section {
+    padding: 6rem 1rem 8rem;
+    background-color: #fffdf9;
+    text-align: center;
+}
+
+.rsvp-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.rsvp-card {
+    background: #fff;
+    padding: 4rem 4rem 7rem;
+    /* Adjusted padding */
+    border: 1px solid #EBE3D9;
+    /* Added subtle border */
+    box-shadow: 0 10px 30px rgba(139, 115, 85, 0.05);
+    position: relative;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+/* Header Styles */
+.rsvp-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.ganesha-icon img {
+    display: block;
+    margin: 0 auto 1rem;
+    opacity: 0.8;
+    width: 60px;
+    height: auto;
+}
+
+.rsvp-monogram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 1rem;
+    color: #a38c6d;
+}
+
+.monogram-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.monogram-line {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #a38c6d, transparent);
+    opacity: 0.6;
+}
+
+.rsvp-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #a38c6d;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+}
+
+.rsvp-deadline {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: #8c8c8c;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+
+/* Success Message Styles */
+.rsvp-success-message {
+    text-align: center;
+    padding: 2rem 0;
+    font-family: 'Playfair Display', serif;
+    color: #a38c6d;
+}
+
+.rsvp-success-message h3 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: #5d6d62;
+    /* Green accent */
+}
+
+.rsvp-success-message p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+
+/* Form Styles */
+.rsvp-form {
+    position: relative;
+    z-index: 2;
+}
+
+.rsvp-form-row {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.rsvp-input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.rsvp-input-group label {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #a38c6d;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.rsvp-input-group input,
+.rsvp-input-group select,
+.rsvp-input-group textarea {
+    padding: 15px 20px;
+    border: 1px solid #f2f2f2;
+    background: #fbfbfb;
+    /* Very light grey/white */
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: #555;
+    outline: none;
+    transition: all 0.3s;
+    width: 100%;
+    border-radius: 2px;
+}
+
+.rsvp-input-group input:focus,
+.rsvp-input-group select:focus,
+.rsvp-input-group textarea:focus {
+    border-color: #d4c5a9;
+    background: #fff;
+}
+
+.rsvp-input-group input::placeholder,
+.rsvp-input-group textarea::placeholder {
+    color: #a0a0a0;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Button */
+.rsvp-button {
+    width: 100%;
+    padding: 16px;
+    background-color: #5d6d62;
+    /* Muted Green */
+    color: #fff;
+    border: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+    font-weight: 500;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rsvp-button:hover {
+    background-color: #4a584f;
+}
+
+/* Floral Decorations */
+.rsvp-floral-left,
+.rsvp-floral-right {
+    position: absolute;
+    bottom: 0;
+    /* Relative to container bottom now */
+    width: 400px;
+    height: auto;
+    z-index: 10;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+}
+
+.rsvp-floral-left {
+    left: -80px;
+    transform: scaleX(-1) rotate(180deg);
+}
+
+.rsvp-floral-right {
+    right: -80px;
+    transform: rotate(180deg);
+}
+
+/* Remove old specific overrides if they exist, merged above */
+
+
+
+/* Bottom Decoration */
+.rsvp-bottom-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 5rem;
+    opacity: 0.6;
+}
+
+.decoration-line {
+    width: 150px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #d4c5a9, transparent);
+}
+
+.decoration-symbol {
+    color: #d4c5a9;
+    font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .rsvp-section {
+        padding: 4rem 1.5rem 6rem;
+    }
+
+    .rsvp-card {
+        padding: 2rem 1rem 4rem;
+        margin: 0 0.5rem 2rem;
+    }
+
+    .rsvp-form-row {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    .rsvp-floral-left,
+    .rsvp-floral-right {
+        width: 140px;
+        bottom: 70px;
+    }
+
+    .rsvp-floral-left {
+        left: -20px;
+    }
+
+    .rsvp-floral-right {
+        right: -20px;
+    }
+
+    .rsvp-title {
+        font-size: 2.2rem;
+    }
+
+    .monogram-line {
+        width: 30px;
+    }
+
+    .rsvp-input-group label {
+        margin-bottom: 0.5rem;
+    }
+
+    .rsvp-input-group input,
+    .rsvp-input-group select,
+    .rsvp-input-group textarea {
+        padding: 12px 15px;
+    }
+
+    .wedding-section{
+padding-left: 10px !important;
+padding-right: 10px !important;
+    
+    }
+
+   
+}
