@@ -76,80 +76,155 @@
 .celebration-cards-container {
     position: relative;
     z-index: 2;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    max-width: 1000px;
     margin: 0 auto;
+    padding: 2rem;
 }
 
 .celebration-card {
-    background: #fffdf9;
-    border: 3px solid #fff;
-    /* Inner border trick */
-    outline: 1px solid #e0d6c2;
-    /* Outer thin border */
-    padding: 3rem 2rem;
-    width: 450px;
-    min-height: 250px;
-    box-shadow: 0 5px 20px rgba(139, 115, 85, 0.08);
+    background: #fff;
+    padding: 2.5rem;
+    border: 1px solid #EBE3D9;
+    box-shadow: 0 10px 30px rgba(139, 115, 85, 0.05);
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .celebration-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(139, 115, 85, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(139, 115, 85, 0.12);
+    border-color: #d4c5a9;
 }
 
-.celebration-logo img {
-    width: 60px;
-    height: auto;
-    margin-bottom: 0.5rem;
-    opacity: 0.8;
+.celebration-card-inner {
+    width: 100%;
 }
 
-.celebration-card-icon {
-    margin-bottom: 1.5rem;
-}
-
-.icon-symbol {
-    font-size: 2.5rem;
-    filter: sepia(100%) hue-rotate(5deg) saturate(150%);
-    /* Tries to make emojis look more 'golden' */
-}
-
-.celebration-card h3 {
+.event-tagline {
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #8B7355;
+    font-size: 1.1rem;
+    color: #a38c6d;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+}
+
+.event-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: #5d6d62;
+    /* Default green accent */
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.event-date-main {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #a38c6d;
     margin-bottom: 1rem;
     font-weight: 400;
 }
 
-.celebration-card-details {
-    font-family: 'Playfair Display', serif;
-    font-size: 0.95rem;
-    color: #a38c6d;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 1rem;
+.event-details-row {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
-.celebration-card-subtext {
+.event-name {
     font-family: 'Playfair Display', serif;
-    /* Or script logic if reference matches */
-    font-size: 1rem;
-    color: #666;
-    /* font-style: italic; */
+    font-size: 1.3rem;
+    color: #5d6d62;
+    font-weight: 600;
+}
+
+.event-time {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: #8c8c8c;
+    font-style: italic;
+}
+
+.event-venue {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: #8B7355;
+    margin-bottom: 1.5rem;
+}
+
+.venue-label {
+    font-weight: 700;
+    color: #a38c6d;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-right: 5px;
+}
+
+.event-dress-code {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
     color: #8c8273;
+    line-height: 1.4;
+    padding-top: 1.5rem;
+    border-top: 1px solid #f0ece3;
+}
+
+.dress-code-label {
+    display: block;
+    font-weight: 700;
+    color: #5d6d62;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+/* Theme variations */
+.theme-cocktail .event-title {
+    color: #2c3e50;
+}
+
+.theme-cocktail .event-name {
+    color: #2c3e50;
+}
+
+.theme-cocktail .dress-code-label {
+    color: #2c3e50;
+}
+
+.theme-haldi .event-title {
+    color: #d35400;
+}
+
+.theme-haldi .event-name {
+    color: #d35400;
+}
+
+.theme-haldi .dress-code-label {
+    color: #d35400;
+}
+
+.theme-wedding .event-title {
+    color: #c0392b;
+}
+
+.theme-wedding .event-name {
+    color: #c0392b;
+}
+
+.theme-wedding .dress-code-label {
+    color: #c0392b;
 }
 
 /* Responsive */
@@ -159,20 +234,28 @@
     }
 
     .celebration-cards-container {
-        padding: 0 1rem;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 1rem;
     }
 
     .celebration-card {
-        width: 100%;
-        margin: 0;
-        padding: 3rem 1.5rem;
+        padding: 2rem 1.5rem;
+    }
+
+    .event-title {
+        font-size: 1.8rem;
+    }
+
+    .event-date-main {
+        font-size: 2rem;
     }
 
     .celebrations-section {
-        padding: 4rem 0 6rem;
+        padding: 4rem 1rem 6rem;
     }
 
     .celebrations-header-content {
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
     }
 }
