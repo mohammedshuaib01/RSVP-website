@@ -58,25 +58,19 @@
     margin-bottom: 0.5rem;
 }
 
-.celebrations-divider {
-    width: 60px;
-    height: 2px;
-    background-color: #d4c5a9;
-    margin: 1rem auto 0;
-    position: relative;
+.celebrations-divider-container {
+    margin: 1.5rem auto 0;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.celebrations-divider::after {
-    content: "";
-    position: absolute;
-    top: -4px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 10px;
-    height: 10px;
-    background: #fffdf9;
-    border: 2px solid #d4c5a9;
-    border-radius: 50%;
+.celebrations-divider-img {
+    width: 100%;
+    height: auto;
+    opacity: 1;
 }
 
 /* Cards Container */

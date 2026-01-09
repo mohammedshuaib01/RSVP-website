@@ -1,10 +1,11 @@
 import React from 'react';
 import './Celebrations.css';
+import dividerImg from '../../assets/celebration-divider.png';
 
 const events = [
     {
         title: "Tropical Paradise",
-        tagline: "A warm welcome served with henna & love",
+
         date: "February 19, 2026",
         eventName: "Welcome Lunch & Mehendi",
         time: "1:00 pm onwards",
@@ -13,7 +14,7 @@ const events = [
     },
     {
         title: "Cocktails & Couture",
-        tagline: "Two rings, one promise and an endless celebration!",
+
         date: "February 19, 2026",
         eventName: "Ring Ceremony & Cocktail",
         time: "6:30 pm onwards",
@@ -22,7 +23,7 @@ const events = [
     },
     {
         title: "Turmeric Tales",
-        tagline: "Celebrating the colours of new beginnings",
+
         date: "February 20, 2026",
         eventName: "Haldi",
         time: "10:30 am onwards",
@@ -31,7 +32,7 @@ const events = [
     },
     {
         title: "Sunset & Vows",
-        tagline: "Uniting two hearts in an eternal bond",
+
         date: "February 20, 2026",
         eventName: "Wedding Ceremony",
         time: "5:30 pm onwards",
@@ -49,7 +50,9 @@ const Celebrations = () => {
                     <img src="/ganeeshlogo.png" alt="Ganesha" />
                 </div>
                 <h1 className="celebrations-title">The Celebrations</h1>
-                <div className="celebrations-divider"></div>
+                <div className="celebrations-divider-container">
+                    <img src={dividerImg} alt="Decorative Divider" className="celebrations-divider-img" />
+                </div>
             </div>
 
             <div className="celebration-cards-container">

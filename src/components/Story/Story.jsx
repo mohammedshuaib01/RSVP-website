@@ -17,8 +17,7 @@ const Story = () => {
                     <span className="divider-line"></span>
                 </div>
                 <p className="story-intro">
-                    With the blessings of our families and the grace of tradition,<br />
-                    two hearts unite in a bond of love and commitment.
+                   With love, tradition, and the blessings of our families, our journey begins.
                 </p>
             </div>
 
