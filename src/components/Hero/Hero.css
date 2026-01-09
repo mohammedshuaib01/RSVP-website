@@ -124,7 +124,19 @@
     }
 
     .main-names {
-        font-size: 3rem;
+        font-size: 3.5rem;
+        display: flex;
+        flex-direction: column;
+        line-height: 1.1;
+    }
+
+    .main-names span {
+        display: block;
+    }
+
+    .main-names span:nth-child(2) {
+        font-size: 2.5rem;
+        margin: 5px 0;
     }
 
     .intro-text {
@@ -138,7 +150,7 @@
     }
 
     .hero-divider {
-        max-width: 300px;
+        max-width: 150px;
     }
 
     .hero-section {
@@ -171,11 +183,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: -1rem;
-    /* Pull up closer to text */
+    margin-top: -6px;
+    /* Moved 10px down from -16px (-1rem) */
     margin-bottom: 2rem;
     width: 100%;
-    max-width: 500px;
+    max-width: 250px;
+    /* Reduced from 500px */
     margin-left: auto;
     margin-right: auto;
     opacity: 0.9;

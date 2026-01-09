@@ -209,7 +209,8 @@
     }
 
     .story-image-side {
-        margin-bottom: 2rem;
+        margin-bottom: 50px;
+        min-height: auto;
     }
 
     .story-main-img {
@@ -226,9 +227,7 @@
     }
 
     .story-floral-corner {
-        width: 180px;
-        bottom: 10px;
-        right: 10px;
+        display: none;
     }
 
     .story-title {

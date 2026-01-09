@@ -17,7 +17,7 @@ const Hero = () => {
                 </p>
 
                 <h1 className="main-names reveal reveal-up reveal-stagger-2">
-                    Akanksha & Vineet
+                    <span>Akanksha</span> <span>&</span> <span>Vineet</span>
                 </h1>
 
                 <div className="hero-divider reveal reveal-up reveal-stagger-3">
