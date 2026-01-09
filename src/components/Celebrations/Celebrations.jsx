@@ -9,6 +9,7 @@ const events = [
         date: "February 19, 2026",
         eventName: "Welcome Lunch & Mehendi",
         time: "1:00 pm onwards",
+        venue: "Rythm Kumarakom",
         dressCode: "Camouflage with the Nature! Think shades of green",
         theme: "tropical"
     },
@@ -18,6 +19,7 @@ const events = [
         date: "February 19, 2026",
         eventName: "Ring Ceremony & Cocktail",
         time: "6:30 pm onwards",
+        venue: "Rythm Kumarakom",
         dressCode: "Bring on the bling! Think sequins & pearls",
         theme: "cocktail"
     },
@@ -27,6 +29,7 @@ const events = [
         date: "February 20, 2026",
         eventName: "Haldi",
         time: "10:30 am onwards",
+        venue: "Rythm Kumarakom",
         dressCode: "Step into the sunshine! Think shades of yellow & orange",
         theme: "haldi"
     },
@@ -36,11 +39,12 @@ const events = [
         date: "February 20, 2026",
         eventName: "Wedding Ceremony",
         time: "5:30 pm onwards",
-        venue: "Backwater Ripples",
+        venue: "Backwater Ripples Kumarakom",
         dressCode: "Go classic with traditionals & bring on the best accessory, your smile!",
         theme: "wedding"
     }
 ];
+
 
 const Celebrations = () => {
     return (

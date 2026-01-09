@@ -64,6 +64,24 @@ const RSVP = () => {
                 </div>
               </div>
 
+              {/* GUEST SIDE (Added) */}
+              <div className="rsvp-form-row">
+                <div className="rsvp-input-group full-width">
+                  <label>Guest From (Bride’s Side / Groom’s Side)</label>
+                  <select
+                    name="entry.GUEST_SIDE"
+                    defaultValue=""
+                    required
+                  >
+                    <option value="" disabled>
+                      Select an option
+                    </option>
+                    <option value="Bride's Side">Bride's Side</option>
+                    <option value="Groom's Side">Groom's Side</option>
+                  </select>
+                </div>
+              </div>
+
               {/* PHONE & EMAIL */}
               <div className="rsvp-form-row">
                 <div className="rsvp-input-group">
@@ -98,11 +116,11 @@ const RSVP = () => {
                     <option value="" disabled>
                       Select an option
                     </option>
-                    <option value="Yes, I will attend">
-                      Yes, I will attend
+                    <option value="Yes">
+                      Yes
                     </option>
-                    <option value="No, I cannot attend">
-                      No, I cannot attend
+                    <option value="No">
+                      No
                     </option>
                   </select>
                 </div>

@@ -35,7 +35,7 @@ const Story = () => {
                     </p>
                     <div className="story-actions">
                         <a href="#rsvp" className="story-rsvp-button">RSVP NOW</a>
-                        <a href="/Akanksha & Vineet’s Wedding Invite.pdf" download className="story-download-link">INVITATION</a>
+                        {/* <a href="/Akanksha & Vineet’s Wedding Invite.pdf" download className="story-download-link">INVITATION</a> */}
                     </div>
                     <img src={floralCorner} alt="" className="story-floral-corner" />
                 </div>
