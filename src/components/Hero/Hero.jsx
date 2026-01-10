@@ -12,8 +12,8 @@ const Hero = () => {
                 </div>
 
                 <p className="intro-text reveal reveal-up reveal-stagger-1">
-                    With love in their hearts and blessings all around, please<br />
-                    join us for the wedding celebration of
+                    With love in their hearts and blessings all around,<br /> please
+                 join us for the wedding celebration of
                 </p>
 
                 <h1 className="main-names reveal reveal-up reveal-stagger-2">
