@@ -189,9 +189,9 @@
 .rsvp-floral-left,
 .rsvp-floral-right {
     position: absolute;
-    bottom: 0;
+    bottom: -50px;
     /* Relative to container bottom now */
-    width: 400px;
+    width: 350px;
     height: auto;
     z-index: 10;
     pointer-events: none;
@@ -262,7 +262,7 @@
     .rsvp-floral-left,
     .rsvp-floral-right {
         width: 140px;
-        bottom: 70px;
+        bottom: -30px;
     }
 
     .rsvp-floral-left {
