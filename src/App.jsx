@@ -1,15 +1,31 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Story from './components/Story/Story';
 import Celebrations from './components/Celebrations/Celebrations';
 import RSVP from './components/RSVP/RSVP';
 import Hero from './components/Hero/Hero';
 import Footer from './components/Footer/Footer';
 import ScrollToTop from './components/Common/ScrollToTop';
+import Preloader from './components/Common/Preloader';
 import Lenis from 'lenis';
 
 import './App.css';
 
 function App() {
+  const [showPreloader, setShowPreloader] = useState(true);
+  const [fadeOut, setFadeOut] = useState(false);
+
+  useEffect(() => {
+    // Check if fonts are loaded or just use a timer for the experience
+    const timer = setTimeout(() => {
+      setFadeOut(true);
+      setTimeout(() => {
+        setShowPreloader(false);
+      }, 800); // Wait for transition to complete
+    }, 2500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -65,6 +81,7 @@ function App() {
 
   return (
     <div className="App">
+      {showPreloader && <Preloader fadeOut={fadeOut} />}
       <Hero />
       <Story />
       <Celebrations />
