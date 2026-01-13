@@ -121,6 +121,10 @@
     margin-bottom: 2.5rem;
 }
 
+.story-para span {
+    display: block;
+}
+
 .story-rsvp-button {
     display: inline-block;
     padding: 12px 35px;
@@ -237,4 +241,13 @@
     .story-section {
         padding: 4rem 1rem;
     }
+
+   .story-para span {
+        display: inline;
+    }
+
+    .story-para span:not(:last-child)::after {
+        content: " ";
+    }
+
 }

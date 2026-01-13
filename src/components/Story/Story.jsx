@@ -27,10 +27,15 @@ const Story = () => {
                 </div>
                 <div className="story-text-side reveal reveal-left">
                     <p className="story-para">
-                        It started with a conversation.
-                        It continued because neither of us wanted it to end.
-                        Somewhere along the way, we became best friends and it felt obvious this was worth choosing every day.
+                        <span>It started with a conversation.</span>
+                        <span>It continued because neither of us wanted it to end.</span>
+                        <span>
+                            Somewhere along the way, we became best friends—and it felt obvious this was
+                            worth choosing every day.
+                        </span>
                     </p>
+
+
                     <div className="story-actions">
                         <a href="#rsvp" className="story-rsvp-button">RSVP NOW</a>
                         {/* <a href="/Akanksha & Vineet’s Wedding Invite.pdf" download className="story-download-link">INVITATION</a> */}
