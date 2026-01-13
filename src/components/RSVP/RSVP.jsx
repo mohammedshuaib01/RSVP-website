@@ -13,9 +13,11 @@ const RSVP = () => {
   const [pickupDate, setPickupDate] = useState("");
   const [pickupError, setPickupError] = useState("");
 
-  // Time handling (NO UI change)
-  const [timeValue, setTimeValue] = useState("");
-  const [ampmValue, setAmpmValue] = useState("");
+  const [arrivalTime, setArrivalTime] = useState("");
+  const [arrivalAmpm, setArrivalAmpm] = useState("");
+
+  const [pickupTime, setPickupTime] = useState("");
+  const [pickupAmpm, setPickupAmpm] = useState("");
 
   const handlePickupDateChange = (value) => {
     setPickupDate(value);
@@ -32,43 +34,52 @@ const RSVP = () => {
 
     const formData = new FormData(e.target);
 
-    /* ---------------- DATE FIX (Google Form expects split fields) ---------------- */
-    const dateValue =
-      requirePickup === "Yes"
-        ? pickupDate
-        : formData.get("entry.2100354446");
+    /* ---------- ARRIVAL DATE & TIME (NO PICKUP) ---------- */
+    if (requirePickup === "No") {
+      const arrivalDate = formData.get("entry.2100354446");
+      if (arrivalDate) {
+        const [y, m, d] = arrivalDate.split("-");
+        formData.append("entry.2100354446_year", y);
+        formData.append("entry.2100354446_month", m);
+        formData.append("entry.2100354446_day", d);
+      }
 
-    if (dateValue) {
-      const [year, month, day] = dateValue.split("-");
-      formData.append("entry.2100354446_year", year);
-      formData.append("entry.2100354446_month", month);
-      formData.append("entry.2100354446_day", day);
+      if (arrivalTime && arrivalAmpm) {
+        formData.set(
+          "entry.1731934251",
+          `${arrivalTime} ${arrivalAmpm}`
+        );
+      }
     }
 
-    /* ---------------- TIME FIX (Google Form expects split fields) ---------------- */
-    if (timeValue) {
-      const [hour, minute] = timeValue.split(":");
-      formData.append("entry.1731934251_hour", hour);
-      formData.append("entry.1731934251_minute", minute);
+    /* ---------- PICKUP DATE & TIME ---------- */
+    if (requirePickup === "Yes") {
+      if (pickupDate) {
+        const [y, m, d] = pickupDate.split("-");
+        formData.append("entry.1281317122_year", y);
+        formData.append("entry.1281317122_month", m);
+        formData.append("entry.1281317122_day", d);
+      }
+
+      // ✅ Pickup Time (COMBINED)
+      if (pickupTime && pickupAmpm) {
+        formData.set(
+          "entry.210907414",
+          `${pickupTime} ${pickupAmpm}`
+        );
+      }
     }
 
-    if (ampmValue) {
-      formData.append("entry.1449965367", ampmValue);
-    }
+    await fetch(
+      "https://docs.google.com/forms/d/e/1FAIpQLSeKTXc7CtZjjnqAuUwog1BVRPVsmWOo2lqrZ6GnE1Ai53aqnQ/formResponse",
+      {
+        method: "POST",
+        body: formData,
+        mode: "no-cors",
+      }
+    );
 
-    try {
-      await fetch(
-        "https://docs.google.com/forms/d/e/1FAIpQLSeKTXc7CtZjjnqAuUwog1BVRPVsmWOo2lqrZ6GnE1Ai53aqnQ/formResponse",
-        {
-          method: "POST",
-          body: formData,
-          mode: "no-cors",
-        }
-      );
-      setIsSubmitted(true);
-    } catch {
-      alert("Something went wrong. Please try again.");
-    }
+    setIsSubmitted(true);
   };
 
   return (
@@ -185,6 +196,11 @@ const RSVP = () => {
                         <option value="Yes">Yes</option>
                         <option value="No">No</option>
                       </select>
+
+                      {/* INFO TEXT */}
+                      <p className="rsvp-info-note">
+                        Pickup is available on <strong>February 19th & 20th</strong>.
+                      </p>
                     </div>
                   </div>
 
@@ -193,21 +209,17 @@ const RSVP = () => {
                     <div className="rsvp-form-row">
                       <div className="rsvp-input-group">
                         <label>Arrival Date</label>
-                        <input
-                          type="date"
-                          name="entry.2100354446"
-                          required
-                        />
+                        <input type="date" name="entry.2100354446" required />
                       </div>
 
                       <div className="rsvp-input-group">
                         <label>Arrival Time</label>
                         <input
-                          type="text"
                           name="entry.1731934251"
-                          placeholder="05:45"
+                          type="text"
+                          placeholder="05:30"
                           pattern="^(0?[1-9]|1[0-2]):[0-5][0-9]$"
-                          onChange={(e) => setTimeValue(e.target.value)}
+                          onChange={(e) => setArrivalTime(e.target.value)}
                           required
                         />
                       </div>
@@ -215,8 +227,7 @@ const RSVP = () => {
                       <div className="rsvp-input-group">
                         <label>AM / PM</label>
                         <select
-                          name="entry.1449965367"
-                          onChange={(e) => setAmpmValue(e.target.value)}
+                          onChange={(e) => setArrivalAmpm(e.target.value)}
                           required
                         >
                           <option value="" disabled>Select</option>
@@ -253,7 +264,6 @@ const RSVP = () => {
                           <label>Pickup Date</label>
                           <input
                             type="date"
-                            name="entry.2100354446"
                             value={pickupDate}
                             onChange={(e) => handlePickupDateChange(e.target.value)}
                             required
@@ -268,11 +278,11 @@ const RSVP = () => {
                         <div className="rsvp-input-group">
                           <label>Pickup Time</label>
                           <input
+                            name="entry.210907414"
                             type="text"
-                            name="entry.1731934251"
-                            placeholder="05:45"
+                            placeholder="05:30"
                             pattern="^(0?[1-9]|1[0-2]):[0-5][0-9]$"
-                            onChange={(e) => setTimeValue(e.target.value)}
+                            onChange={(e) => setPickupTime(e.target.value)}
                             required
                           />
                         </div>
@@ -280,8 +290,7 @@ const RSVP = () => {
                         <div className="rsvp-input-group">
                           <label>AM / PM</label>
                           <select
-                            name="entry.1449965367"
-                            onChange={(e) => setAmpmValue(e.target.value)}
+                            onChange={(e) => setPickupAmpm(e.target.value)}
                             required
                           >
                             <option value="" disabled>Select</option>
@@ -293,18 +302,18 @@ const RSVP = () => {
 
                       {(pickupLocation === "Ernakulam Railway Station" ||
                         pickupLocation === "Kottayam Railway Station") && (
-                        <div className="rsvp-form-row">
-                          <div className="rsvp-input-group full-width">
-                            <label>Train Number</label>
-                            <input
-                              type="text"
-                              name="entry.856932416"
-                              placeholder="12624 / Malabar Express"
-                              required
-                            />
+                          <div className="rsvp-form-row">
+                            <div className="rsvp-input-group full-width">
+                              <label>Train Number</label>
+                              <input
+                                type="text"
+                                name="entry.856932416"
+                                placeholder="12624 / Malabar Express"
+                                required
+                              />
+                            </div>
                           </div>
-                        </div>
-                      )}
+                        )}
 
                       {pickupLocation === "Kochi International Airport" && (
                         <div className="rsvp-form-row">
