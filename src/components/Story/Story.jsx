@@ -16,9 +16,9 @@ const Story = () => {
                     <span className="divider-ornament">~ ❧ ~</span>
                     <span className="divider-line"></span>
                 </div>
-                <p className="story-intro">
+                {/* <p className="story-intro">
                    With love, tradition, and the blessings of our families, our journey begins.
-                </p>
+                </p> */}
             </div>
 
             <div className="story-card reveal reveal-up">
@@ -27,11 +27,9 @@ const Story = () => {
                 </div>
                 <div className="story-text-side reveal reveal-left">
                     <p className="story-para">
-                        With the blessings of our families and the grace
-                        of tradition, two hearts unite in bond of love and
-                        commitment. Rooted in shared values, mutual respect,
-                        and quiet moments of joy, their journey forward
-                        is one of companionship, trust, and togetherness.
+                        It started with a conversation.
+                        It continued because neither of us wanted it to end.
+                        Somewhere along the way, we became best friends and it felt obvious this was worth choosing every day.
                     </p>
                     <div className="story-actions">
                         <a href="#rsvp" className="story-rsvp-button">RSVP NOW</a>
