@@ -10,7 +10,7 @@ const Preloader = ({ fadeOut }) => {
                     <img src={coupleLogo} alt="Akansha & Vineet" className="preloader-logo" />
                 </div>
                 <div className="preloader-text">
-                    <p className="loading-text">Welcome Akansha & Vineet's Wedding</p>
+                    <p className="loading-text">Welcome Akanksha & Vineet's Wedding</p>
                     <div className="loading-dots">
                         <span></span>
                         <span></span>
