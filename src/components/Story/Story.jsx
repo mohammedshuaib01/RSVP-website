@@ -30,7 +30,7 @@ const Story = () => {
                         <span>It started with a conversation.</span>
                         <span>It continued because neither of us wanted it to end.</span>
                         <span>
-                            Somewhere along the way, we became best friends and it felt obvious this was
+                            Somewhere along the way, we became best friends—and it felt obvious this was
                             worth choosing every day.
                         </span>
                     </p>

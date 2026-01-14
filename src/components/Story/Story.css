@@ -222,8 +222,8 @@
     }
 
     .story-text-side {
-        align-items: center;
-        text-align: center;
+        align-items: left;
+        text-align: left;
     }
 
     .story-rsvp-button {
@@ -241,13 +241,10 @@
     .story-section {
         padding: 4rem 1rem;
     }
-
-   .story-para span {
-        display: inline;
+ /* new code */
+   .story-para  {
+        font-size: 0.8rem;
     }
 
-    .story-para span:not(:last-child)::after {
-        content: " ";
-    }
-
+    
 }
