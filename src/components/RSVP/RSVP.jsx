@@ -4,14 +4,14 @@ import floralCorner from "../../assets/floral_corner.png";
 import ganeshLogo from "../../assets/ganesh_logo_new.png";
 
 const ALLOWED_PICKUP_DATES = ["2026-02-19", "2026-02-20"];
-// const DEFAULT_PICKUP_DATE = "2026-02-19";
+const DEFAULT_PICKUP_DATE = "2026-02-19";
 
 const RSVP = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [willAttend, setWillAttend] = useState("");
   const [requirePickup, setRequirePickup] = useState("");
   const [pickupLocation, setPickupLocation] = useState("");
-  const [pickupDate, setPickupDate] = useState("");
+  const [pickupDate, setPickupDate] = useState(DEFAULT_PICKUP_DATE);
   const [pickupError, setPickupError] = useState("");
 
   const [arrivalTime, setArrivalTime] = useState("");
