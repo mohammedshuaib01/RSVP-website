@@ -199,7 +199,7 @@ const RSVP = () => {
 
                       {/* INFO TEXT */}
                       <p className="rsvp-info-note">
-                        Pickup is available only on <strong>February 19th & 20th</strong>.
+                        Pickup is available on <strong>February 19th & 20th</strong>.
                       </p>
                     </div>
                   </div>

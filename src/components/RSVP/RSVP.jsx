@@ -4,6 +4,7 @@ import floralCorner from "../../assets/floral_corner.png";
 import ganeshLogo from "../../assets/ganesh_logo_new.png";
 
 const ALLOWED_PICKUP_DATES = ["2026-02-19", "2026-02-20"];
+// const DEFAULT_PICKUP_DATE = "2026-02-19";
 
 const RSVP = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -18,6 +19,8 @@ const RSVP = () => {
 
   const [pickupTime, setPickupTime] = useState("");
   const [pickupAmpm, setPickupAmpm] = useState("");
+
+
 
   const handlePickupDateChange = (value) => {
     setPickupDate(value);
@@ -227,6 +230,8 @@ const RSVP = () => {
                       <div className="rsvp-input-group">
                         <label>AM / PM</label>
                         <select
+                          name="entry.1731934251"
+                          // type="text"
                           onChange={(e) => setArrivalAmpm(e.target.value)}
                           required
                         >
@@ -265,6 +270,8 @@ const RSVP = () => {
                           <input
                             type="date"
                             value={pickupDate}
+                            min="2026-02-19"
+                            max="2026-02-20"
                             onChange={(e) => handlePickupDateChange(e.target.value)}
                             required
                           />
@@ -290,6 +297,8 @@ const RSVP = () => {
                         <div className="rsvp-input-group">
                           <label>AM / PM</label>
                           <select
+                          
+                          name="entry.210907414"
                             onChange={(e) => setPickupAmpm(e.target.value)}
                             required
                           >
